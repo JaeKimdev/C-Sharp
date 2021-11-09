@@ -28,3 +28,13 @@ D:\Dev\C#\Vehicle Registration Management\Vehicle Registration Management\obj\De
 D:\Dev\C#\Vehicle Registration Management\Vehicle Registration Management\bin\Debug\Vehicle Registration Management.exe.config
 D:\Dev\C#\Vehicle Registration Management\Vehicle Registration Management\bin\Debug\Vehicle Registration Management.exe
 D:\Dev\C#\Vehicle Registration Management\Vehicle Registration Management\bin\Debug\Vehicle Registration Management.pdb
+Z:\Dev\C#\Vehicle Registration Management\Vehicle Registration Management\bin\Debug\Vehicle Registration Management.exe.config
+Z:\Dev\C#\Vehicle Registration Management\Vehicle Registration Management\bin\Debug\Vehicle Registration Management.exe
+Z:\Dev\C#\Vehicle Registration Management\Vehicle Registration Management\bin\Debug\Vehicle Registration Management.pdb
+Z:\Dev\C#\Vehicle Registration Management\Vehicle Registration Management\obj\Debug\Vehicle Registration Management.csproj.AssemblyReference.cache
+Z:\Dev\C#\Vehicle Registration Management\Vehicle Registration Management\obj\Debug\Vehicle_Registration_Management.Form1.resources
+Z:\Dev\C#\Vehicle Registration Management\Vehicle Registration Management\obj\Debug\Vehicle_Registration_Management.Properties.Resources.resources
+Z:\Dev\C#\Vehicle Registration Management\Vehicle Registration Management\obj\Debug\Vehicle Registration Management.csproj.GenerateResource.cache
+Z:\Dev\C#\Vehicle Registration Management\Vehicle Registration Management\obj\Debug\Vehicle Registration Management.csproj.CoreCompileInputs.cache
+Z:\Dev\C#\Vehicle Registration Management\Vehicle Registration Management\obj\Debug\Vehicle Registration Management.exe
+Z:\Dev\C#\Vehicle Registration Management\Vehicle Registration Management\obj\Debug\Vehicle Registration Management.pdb
