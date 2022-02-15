@@ -32,6 +32,10 @@
             this.ButtonInitialize = new System.Windows.Forms.Button();
             this.ButtonSort = new System.Windows.Forms.Button();
             this.ListboxDisplay = new System.Windows.Forms.ListBox();
+            this.TextBoxTarget = new System.Windows.Forms.TextBox();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonOpen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ButtonRandomize
@@ -72,11 +76,52 @@
             this.ListboxDisplay.Size = new System.Drawing.Size(491, 368);
             this.ListboxDisplay.TabIndex = 3;
             // 
+            // TextBoxTarget
+            // 
+            this.TextBoxTarget.Location = new System.Drawing.Point(303, 12);
+            this.TextBoxTarget.Name = "TextBoxTarget";
+            this.TextBoxTarget.Size = new System.Drawing.Size(100, 20);
+            this.TextBoxTarget.TabIndex = 4;
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Location = new System.Drawing.Point(409, 12);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
+            this.buttonSearch.TabIndex = 5;
+            this.buttonSearch.Text = "Search";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Location = new System.Drawing.Point(327, 35);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(75, 23);
+            this.buttonSave.TabIndex = 6;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
+            // buttonOpen
+            // 
+            this.buttonOpen.Location = new System.Drawing.Point(408, 35);
+            this.buttonOpen.Name = "buttonOpen";
+            this.buttonOpen.Size = new System.Drawing.Size(75, 23);
+            this.buttonOpen.TabIndex = 7;
+            this.buttonOpen.Text = "Open";
+            this.buttonOpen.UseVisualStyleBackColor = true;
+            this.buttonOpen.Click += new System.EventHandler(this.buttonOpen_Click);
+            // 
             // FormingArray
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(515, 450);
+            this.Controls.Add(this.buttonOpen);
+            this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.buttonSearch);
+            this.Controls.Add(this.TextBoxTarget);
             this.Controls.Add(this.ListboxDisplay);
             this.Controls.Add(this.ButtonSort);
             this.Controls.Add(this.ButtonInitialize);
@@ -84,6 +129,7 @@
             this.Name = "FormingArray";
             this.Text = "2D Integer Array";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -93,6 +139,10 @@
         private System.Windows.Forms.Button ButtonInitialize;
         private System.Windows.Forms.Button ButtonSort;
         private System.Windows.Forms.ListBox ListboxDisplay;
+        private System.Windows.Forms.TextBox TextBoxTarget;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonOpen;
     }
 }
 

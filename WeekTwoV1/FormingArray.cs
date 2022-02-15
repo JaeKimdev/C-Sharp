@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,21 +22,22 @@ namespace WeekTwoV1
         {
             InitializeComponent();
         }
-        static int row = 10; // x
-        static int col = 10; // y
-        static int[,] myArray = new int [row,col];
+        static int rowSize = 10; // x
+        static int colSize = 10; // y
+        static int[,] myArray = new int [rowSize, colSize];
+        string fileName = "array.bin";
 
         #region DisplayArray
         private void DisplayArray()
         {
             ListboxDisplay.Items.Clear();
-            for (int x = 0; x < row; x++)
+            for (int x = 0; x < rowSize; x++)
             // aligning x with a row
             {
                 ListboxDisplay.Items.Add(" ");
                 // This is only for displaying the array
                 string oneLine = " ";
-                for (int y = 0; y < col; y++)
+                for (int y = 0; y < colSize; y++)
                 {
                     oneLine = oneLine + "    " + myArray[x, y];
                 }
@@ -49,11 +52,9 @@ namespace WeekTwoV1
         private void ButtonInitialize_Click(object sender, EventArgs e)
         {
             
-            for (int x = 0; x < row; x++)
- 
-            // aligning x with a row
+            for (int y = 0; y < colSize; y++)
             {
-                for (int y = 0; y < col; y++)
+                for (int x = 0; x < rowSize; x++)
                 {
                     myArray[x, y] = x + 1;
                     // populating and then displaying the array
@@ -66,14 +67,16 @@ namespace WeekTwoV1
         private void ButtonRandomize_Click(object sender, EventArgs e)
         {
             Random r = new Random();
-            for (int x = 0; x < row; x++)
+            for (int x = 0; x < rowSize; x++)
             // aligning x with a row
             {
-                for (int y = 0; y < col; y++)
+                for (int y = 0; y < colSize; y++)
                 {
                     myArray[x, y] = r.Next(100, 1000);
                     //myArray[x, y] = x + 1;
                     // populating and then displaying the array
+
+                    //add pause
                 }
             }
             DisplayArray();
@@ -82,15 +85,15 @@ namespace WeekTwoV1
         #region Sort
         private void ButtonSort_Click(object sender, EventArgs e)
         {
-            for (int row_x = 0; row_x < row; row_x++)
+            for (int row_x = 0; row_x < rowSize; row_x++)
             // row
             {
-                for (int col_y = 0; col_y < col; col_y++)
+                for (int col_y = 0; col_y < colSize; col_y++)
                 // column
                 {
-                    for (int i = 0; i < row; i++)
+                    for (int i = 0; i < rowSize; i++)
                     {
-                        for (int j = 0; j < col; j++)
+                        for (int j = 0; j < colSize; j++)
                         {
                             if (myArray[i, j] > myArray[row_x, col_y])
 
@@ -108,7 +111,78 @@ namespace WeekTwoV1
             }
             DisplayArray();
         }
-        #endregion
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            int target = int.Parse(TextBoxTarget.Text);
+            int row = 0;
+            int col = colSize - 1;
+            while ((row <= rowSize -1) && (col >= 0))
+            {
+                if (myArray[row, col] < target)
+                {
+                   ListboxDisplay.Items.Add("[" + "matrix" + row + "," + col + "]" + myArray[row, col]);
+                    row++;
+                }
+                else if (myArray[row, col] > target)
+                {
+                    ListboxDisplay.Items.Add("[" + "matrix" + row + "," + col + "]" + myArray[row, col]);
+                    col--;
+                }
+                else
+                {
+                    ListboxDisplay.Items.Add("Found");
+                    return;
+                }
+
+            }
+            ListboxDisplay.Items.Add("Not Found");
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (Stream stream = File.Open(fileName, FileMode.Create))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+                    for (int y =0; y < colSize; y++)
+                    {
+                        for (int x =0; x < rowSize; x++)
+                            bin.Serialize(stream, myArray[x, y]);
+                    }
+                }
+
+            }
+            catch(IOException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void buttonOpen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (Stream stream = File.Open(fileName, FileMode.Open))
+                {
+                    BinaryFormatter bin = new BinaryFormatter();
+                    for (int y = 0; y < colSize; y++)
+                    {
+                        for (int x = 0; x < rowSize; x++)
+                        {
+                            myArray[x,y] = (int)bin.Deserialize(stream);
+                        }
+                    }
+                }
+            }
+            catch(IOException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            DisplayArray();
+        }
     }
 }
+#endregion
 

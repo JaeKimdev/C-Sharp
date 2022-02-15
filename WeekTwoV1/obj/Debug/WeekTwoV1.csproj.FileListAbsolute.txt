@@ -1,0 +1,22 @@
+C:\Users\30045325\Source\Repos\WeekTwoV1\bin\Debug\WeekTwoV1.exe.config
+C:\Users\30045325\Source\Repos\WeekTwoV1\bin\Debug\WeekTwoV1.exe
+C:\Users\30045325\Source\Repos\WeekTwoV1\bin\Debug\WeekTwoV1.pdb
+C:\Users\30045325\Source\Repos\WeekTwoV1\obj\Debug\WeekTwoV1.csproj.AssemblyReference.cache
+C:\Users\30045325\Source\Repos\WeekTwoV1\obj\Debug\WeekTwoV1.csproj.SuggestedBindingRedirects.cache
+C:\Users\30045325\Source\Repos\WeekTwoV1\obj\Debug\WeekTwoV1.FormingArray.resources
+C:\Users\30045325\Source\Repos\WeekTwoV1\obj\Debug\WeekTwoV1.Properties.Resources.resources
+C:\Users\30045325\Source\Repos\WeekTwoV1\obj\Debug\WeekTwoV1.csproj.GenerateResource.cache
+C:\Users\30045325\Source\Repos\WeekTwoV1\obj\Debug\WeekTwoV1.csproj.CoreCompileInputs.cache
+C:\Users\30045325\Source\Repos\WeekTwoV1\obj\Debug\WeekTwoV1.exe
+C:\Users\30045325\Source\Repos\WeekTwoV1\obj\Debug\WeekTwoV1.pdb
+D:\7-C# 2\repo\WeekTwoV1\bin\Debug\WeekTwoV1.exe.config
+D:\7-C# 2\repo\WeekTwoV1\bin\Debug\WeekTwoV1.exe
+D:\7-C# 2\repo\WeekTwoV1\bin\Debug\WeekTwoV1.pdb
+D:\7-C# 2\repo\WeekTwoV1\obj\Debug\WeekTwoV1.csproj.AssemblyReference.cache
+D:\7-C# 2\repo\WeekTwoV1\obj\Debug\WeekTwoV1.csproj.SuggestedBindingRedirects.cache
+D:\7-C# 2\repo\WeekTwoV1\obj\Debug\WeekTwoV1.FormingArray.resources
+D:\7-C# 2\repo\WeekTwoV1\obj\Debug\WeekTwoV1.Properties.Resources.resources
+D:\7-C# 2\repo\WeekTwoV1\obj\Debug\WeekTwoV1.csproj.GenerateResource.cache
+D:\7-C# 2\repo\WeekTwoV1\obj\Debug\WeekTwoV1.csproj.CoreCompileInputs.cache
+D:\7-C# 2\repo\WeekTwoV1\obj\Debug\WeekTwoV1.exe
+D:\7-C# 2\repo\WeekTwoV1\obj\Debug\WeekTwoV1.pdb
