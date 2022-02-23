@@ -9,3 +9,14 @@ C:\Users\30043320\Source\Repos\mene79\C-Sharp\Wiki\Wiki\obj\Debug\Wiki.csproj.Ge
 C:\Users\30043320\Source\Repos\mene79\C-Sharp\Wiki\Wiki\obj\Debug\Wiki.csproj.CoreCompileInputs.cache
 C:\Users\30043320\Source\Repos\mene79\C-Sharp\Wiki\Wiki\obj\Debug\Wiki.exe
 C:\Users\30043320\Source\Repos\mene79\C-Sharp\Wiki\Wiki\obj\Debug\Wiki.pdb
+D:\Dev\TAFE\7-C# 2\repo\Wiki\Wiki\obj\Debug\Wiki.csproj.AssemblyReference.cache
+D:\Dev\TAFE\7-C# 2\repo\Wiki\Wiki\obj\Debug\Wiki.csproj.SuggestedBindingRedirects.cache
+D:\Dev\TAFE\7-C# 2\repo\Wiki\Wiki\obj\Debug\Wiki.Properties.Resources.resources
+D:\Dev\TAFE\7-C# 2\repo\Wiki\Wiki\obj\Debug\Wiki.Wiki.resources
+D:\Dev\TAFE\7-C# 2\repo\Wiki\Wiki\obj\Debug\Wiki.csproj.GenerateResource.cache
+D:\Dev\TAFE\7-C# 2\repo\Wiki\Wiki\obj\Debug\Wiki.csproj.CoreCompileInputs.cache
+D:\Dev\TAFE\7-C# 2\repo\Wiki\Wiki\obj\Debug\Wiki.exe
+D:\Dev\TAFE\7-C# 2\repo\Wiki\Wiki\obj\Debug\Wiki.pdb
+D:\Dev\TAFE\7-C# 2\repo\Wiki\Wiki\bin\Debug\Wiki.exe.config
+D:\Dev\TAFE\7-C# 2\repo\Wiki\Wiki\bin\Debug\Wiki.exe
+D:\Dev\TAFE\7-C# 2\repo\Wiki\Wiki\bin\Debug\Wiki.pdb
