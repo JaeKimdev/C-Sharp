@@ -1,0 +1,11 @@
+C:\Users\30043320\Source\Repos\Week05\obj\Debug\myModels.csproj.SuggestedBindingRedirects.cache
+C:\Users\30043320\Source\Repos\Week05\obj\Debug\myModels.FormModels.resources
+C:\Users\30043320\Source\Repos\Week05\obj\Debug\Week05.Properties.Resources.resources
+C:\Users\30043320\Source\Repos\Week05\obj\Debug\myModels.csproj.GenerateResource.cache
+C:\Users\30043320\Source\Repos\Week05\obj\Debug\myModels.csproj.CoreCompileInputs.cache
+C:\Users\30043320\Source\Repos\Week05\obj\Debug\Week05.exe
+C:\Users\30043320\Source\Repos\Week05\obj\Debug\Week05.pdb
+C:\Users\30043320\Source\Repos\Week05\bin\Debug\Week05.exe.config
+C:\Users\30043320\Source\Repos\Week05\bin\Debug\Week05.exe
+C:\Users\30043320\Source\Repos\Week05\bin\Debug\Week05.pdb
+C:\Users\30043320\Source\Repos\Week05\obj\Debug\myModels.csproj.AssemblyReference.cache
