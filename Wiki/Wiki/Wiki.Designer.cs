@@ -45,8 +45,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.buttonEdit = new System.Windows.Forms.Button();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.buttonEdit = new System.Windows.Forms.Button();
+            this.toolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.toolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonAdd
@@ -97,6 +99,7 @@
             this.buttonSave.TabIndex = 4;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // textBoxName
             // 
@@ -105,6 +108,7 @@
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(156, 20);
             this.textBoxName.TabIndex = 5;
+            this.textBoxName.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBoxName_MouseDoubleClick);
             // 
             // textBoxCategory
             // 
@@ -149,6 +153,7 @@
             this.listViewArray.TabIndex = 2;
             this.listViewArray.UseCompatibleStateImageBehavior = false;
             this.listViewArray.View = System.Windows.Forms.View.Details;
+            this.listViewArray.SelectedIndexChanged += new System.EventHandler(this.listViewArray_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -196,32 +201,41 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "Definition";
             // 
+            // toolStrip
+            // 
+            this.toolStrip.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel});
+            this.toolStrip.Location = new System.Drawing.Point(0, 349);
+            this.toolStrip.Name = "toolStrip";
+            this.toolStrip.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.toolStrip.Size = new System.Drawing.Size(394, 25);
+            this.toolStrip.TabIndex = 15;
+            this.toolStrip.Text = "toolStrip1";
+            // 
             // buttonEdit
             // 
             this.buttonEdit.Location = new System.Drawing.Point(93, 41);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(75, 23);
-            this.buttonEdit.TabIndex = 14;
-            this.buttonEdit.Text = "Edit";
+            this.buttonEdit.TabIndex = 16;
+            this.buttonEdit.Text = "EDIT";
             this.buttonEdit.UseVisualStyleBackColor = true;
             this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
-            // toolStrip
+            // toolStripLabel
             // 
-            this.toolStrip.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStrip.Location = new System.Drawing.Point(0, 349);
-            this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(394, 25);
-            this.toolStrip.TabIndex = 15;
-            this.toolStrip.Text = "toolStrip1";
+            this.toolStripLabel.Name = "toolStripLabel";
+            this.toolStripLabel.Size = new System.Drawing.Size(0, 22);
             // 
             // Wiki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 374);
-            this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.buttonEdit);
+            this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -240,6 +254,8 @@
             this.Name = "Wiki";
             this.Text = "Wiki";
             this.Load += new System.EventHandler(this.Wiki_Load);
+            this.toolStrip.ResumeLayout(false);
+            this.toolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,8 +280,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.ToolStrip toolStrip;
+        private System.Windows.Forms.Button buttonEdit;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel;
     }
 }
 
