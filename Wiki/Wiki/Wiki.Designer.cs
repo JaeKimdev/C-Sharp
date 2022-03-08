@@ -37,7 +37,7 @@
             this.textBoxCategory = new System.Windows.Forms.TextBox();
             this.textBoxStructure = new System.Windows.Forms.TextBox();
             this.textBoxDefinition = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.listViewArray = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -46,8 +46,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.buttonEdit = new System.Windows.Forms.Button();
             this.toolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.buttonEdit = new System.Windows.Forms.Button();
             this.toolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,12 +133,12 @@
             this.textBoxDefinition.Size = new System.Drawing.Size(156, 125);
             this.textBoxDefinition.TabIndex = 8;
             // 
-            // textBox5
+            // textBoxSearch
             // 
-            this.textBox5.Location = new System.Drawing.Point(192, 18);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 9;
+            this.textBoxSearch.Location = new System.Drawing.Point(192, 19);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSearch.TabIndex = 9;
             // 
             // listViewArray
             // 
@@ -214,6 +214,11 @@
             this.toolStrip.TabIndex = 15;
             this.toolStrip.Text = "toolStrip1";
             // 
+            // toolStripLabel
+            // 
+            this.toolStripLabel.Name = "toolStripLabel";
+            this.toolStripLabel.Size = new System.Drawing.Size(0, 22);
+            // 
             // buttonEdit
             // 
             this.buttonEdit.Location = new System.Drawing.Point(93, 41);
@@ -223,11 +228,6 @@
             this.buttonEdit.Text = "EDIT";
             this.buttonEdit.UseVisualStyleBackColor = true;
             this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
-            // 
-            // toolStripLabel
-            // 
-            this.toolStripLabel.Name = "toolStripLabel";
-            this.toolStripLabel.Size = new System.Drawing.Size(0, 22);
             // 
             // Wiki
             // 
@@ -241,7 +241,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listViewArray);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.textBoxDefinition);
             this.Controls.Add(this.textBoxStructure);
             this.Controls.Add(this.textBoxCategory);
@@ -272,7 +272,7 @@
         private System.Windows.Forms.TextBox textBoxCategory;
         private System.Windows.Forms.TextBox textBoxStructure;
         private System.Windows.Forms.TextBox textBoxDefinition;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.ListView listViewArray;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
