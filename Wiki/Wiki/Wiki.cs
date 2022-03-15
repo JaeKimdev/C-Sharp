@@ -25,7 +25,7 @@ namespace Wiki
 
         //Q 8.1	Create a global 2D string array, use static variables for the dimensions (row, column)
 
-        static int rowSize = 8;
+        static int rowSize = 12;
         static int colSize = 4;  //Name, Category, Structure, Definition
         string[,] myArray = new string[rowSize, colSize];
         string defaultFileName = "definitions.dat";
@@ -91,6 +91,11 @@ namespace Wiki
         {
             ClearTextBox();
         }
+        private void textBoxSearch_DoubleClick(object sender, EventArgs e)
+        {
+            textBoxSearch.Clear();
+        }
+
         #endregion
 
         #region Show informations
@@ -145,50 +150,78 @@ namespace Wiki
                     }
                 }
             }
+            else
+            {
+                toolStripLabel.Text = "Please input every fields to Add data";
+            }
             ClearTextBox();
             BubbleSort();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            int currentRecord = listViewArray.SelectedIndices[0];
-            if (currentRecord >= 0)
+            try
             {
-                DialogResult delName = MessageBox.Show("Do you wish to delete this Name?",
-                 "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (delName == DialogResult.Yes)
+                int currentRecord = listViewArray.SelectedIndices[0];
+                if (currentRecord > 0)
                 {
-                    myArray[currentRecord, 0] = "";
-                    myArray[currentRecord, 1] = "~";
-                    myArray[currentRecord, 2] = "";
-                    myArray[currentRecord, 3] = "";
-                    toolStripLabel.Text = "Data Deleted";
+                    DialogResult delName = MessageBox.Show("Do you wish to delete this Name?",
+                     "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (delName == DialogResult.Yes)
+                    {
+                        myArray[currentRecord, 0] = "";
+                        myArray[currentRecord, 1] = "~";
+                        myArray[currentRecord, 2] = "";
+                        myArray[currentRecord, 3] = "";
+                        toolStripLabel.Text = "Data Deleted";
+                        ClearTextBox();
+                        BubbleSort();
+                    }                   
+                    else // If user click 'No', show messege
+                    {
+                        toolStripLabel.Text = "Data NOT Deleted";
+                    }
                 }
-                ClearTextBox();
-                BubbleSort();
             }
+            catch (Exception) // Prevent to click without select data
+            {
+                toolStripLabel.Text = "Please select data to delete";
+                ClearTextBox();
+            }
+
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-            int currentRecord = listViewArray.SelectedIndices[0];
-            if (currentRecord >= 0)
+            try
             {
-                var result = MessageBox.Show("Proceed with update?", "Edit Record",
-                    MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (result == DialogResult.OK)
+                int currentRecord = listViewArray.SelectedIndices[0];
+                if (currentRecord >= 0)
                 {
-                    myArray[currentRecord, 0] = textBoxName.Text;
-                    myArray[currentRecord, 1] = textBoxCategory.Text;
-                    myArray[currentRecord, 2] = textBoxStructure.Text;
-                    myArray[currentRecord, 3] = textBoxDefinition.Text;
-                    ClearTextBox();
-                    BubbleSort();
-                    toolStripLabel.Text = "Data Edited";
+                    var result = MessageBox.Show("Proceed with update?", "Edit Record",
+                        MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
+                    {
+                        myArray[currentRecord, 0] = textBoxName.Text;
+                        myArray[currentRecord, 1] = textBoxCategory.Text;
+                        myArray[currentRecord, 2] = textBoxStructure.Text;
+                        myArray[currentRecord, 3] = textBoxDefinition.Text;
+                        ClearTextBox();
+                        BubbleSort();
+                        toolStripLabel.Text = "Data Edited";
+                    }
+                    else // If user click 'No', show messege
+                    {
+                        toolStripLabel.Text = "Data NOT Edited";
+                    }
                 }
             }
+            catch(Exception) // Prevent to click without select data
+            {
+                toolStripLabel.Text = "Please select data to Edit!";
+                ClearTextBox();
+            }
         }
-
         #endregion
 
         #region Search
@@ -197,12 +230,12 @@ namespace Wiki
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            listViewArray.Items.Clear();
             if (!string.IsNullOrEmpty(textBoxSearch.Text))
             {
+                listViewArray.Items.Clear();
                 for (int x = 0; x < rowSize; x++)
                 {
-                    if (string.Compare(myArray[x, 0], textBoxSearch.Text) == 0)
+                    if (string.Compare(myArray[x, 0], textBoxSearch.Text) == 0)  //name search
                     {
                         ListViewItem lvi = new ListViewItem(myArray[x, 0]);
                         lvi.SubItems.Add(myArray[x, 1]);
@@ -211,7 +244,7 @@ namespace Wiki
                         listViewArray.Items.Add(lvi);
                         toolStripLabel.Text = "Data Found!";
                     }
-                    else if (string.Compare(myArray[x, 1], textBoxSearch.Text) == 0)
+                    else if (string.Compare(myArray[x, 1], textBoxSearch.Text) == 0)  // category search
                     {
                         ListViewItem lvi = new ListViewItem(myArray[x, 0]);
                         lvi.SubItems.Add(myArray[x, 1]);
@@ -219,11 +252,20 @@ namespace Wiki
                         lvi.SubItems.Add(myArray[x, 3]);
                         listViewArray.Items.Add(lvi);
                         toolStripLabel.Text = "Data Found!";
+                    }
+                    else if (toolStripLabel.Text != "Data Found!")  // data Not Found
+                    {
+                        toolStripLabel.Text = "Data NOT Found!";
                     }
                     listViewArray.ForeColor = Color.Blue;
                 }
             }
+            else // Error trapping for no data Search
+            {
+                toolStripLabel.Text = "Please input data to Search!";
+            }
             textBoxSearch.Clear();
+            textBoxSearch.Focus();
         }
         #endregion
 
@@ -332,9 +374,8 @@ namespace Wiki
                 MessageBox.Show(ex.ToString());
             }
         }
-        #endregion
 
-       
+        #endregion
     }
 
 

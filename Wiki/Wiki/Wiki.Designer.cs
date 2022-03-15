@@ -139,6 +139,7 @@
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearch.TabIndex = 9;
+            this.textBoxSearch.DoubleClick += new System.EventHandler(this.textBoxSearch_DoubleClick);
             // 
             // listViewArray
             // 
