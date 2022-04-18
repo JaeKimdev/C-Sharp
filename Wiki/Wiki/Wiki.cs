@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 // Jae Hyumg Kim, 30043320
 // Cert IV C#2 Assesment1
-// Wiki Program - use 2D Array and ListView
+// Wiki Program - using 2D Array and ListView
 
 namespace Wiki
 {
@@ -48,13 +48,13 @@ namespace Wiki
             {
                 for (int x = 0; x < rowSize; x++)
                 {
-                    myArray[x, 0] = "";
-                    myArray[x, 1] = "~";
+                    myArray[x, 0] = "~";
+                    myArray[x, 1] = "";
                     myArray[x, 2] = "";
                     myArray[x, 3] = "";
                 }
             }
-            DisplayArray();
+            BubbleSort();
         }
 
         #region DisplayArray
@@ -113,64 +113,72 @@ namespace Wiki
         #endregion
 
         #region Add, Delete, Edit
-
         // Q 8.2 Create an ADD button that will store the information from the 4 text boxes into the 2D array
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(textBoxName.Text) &&
-              !string.IsNullOrWhiteSpace(textBoxCategory.Text) &&
-              !string.IsNullOrWhiteSpace(textBoxStructure.Text) &&
-              !string.IsNullOrWhiteSpace(textBoxDefinition.Text))
+            toolStripLabel.Text = "";
+            if (rowSize > 0 && rowSize < 12)
             {
-                for (int x = 0; x < rowSize; x++)
+                if (!string.IsNullOrWhiteSpace(textBoxName.Text) &&
+                  !string.IsNullOrWhiteSpace(textBoxCategory.Text) &&
+                  !string.IsNullOrWhiteSpace(textBoxStructure.Text) &&
+                  !string.IsNullOrWhiteSpace(textBoxDefinition.Text))
                 {
-                    if (myArray[x, 0] == "")
+                    for (int x = 0; x < rowSize; x++)
                     {
-                        myArray[x, 0] = textBoxName.Text;
-                        myArray[x, 1] = textBoxCategory.Text;
-                        myArray[x, 2] = textBoxStructure.Text;
-                        myArray[x, 3] = textBoxDefinition.Text;
+                        if (myArray[x, 0] == "")
+                        {
+                            myArray[x, 0] = textBoxName.Text;
+                            myArray[x, 1] = textBoxCategory.Text;
+                            myArray[x, 2] = textBoxStructure.Text;
+                            myArray[x, 3] = textBoxDefinition.Text;
 
-                        var result = MessageBox.Show("Proceed with new Record?", "Add New Record",
-                            MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                        if (result == DialogResult.OK)
-                        {
-                            toolStripLabel.Text = "Data Added";
-                            break;
-                        }
-                        else
-                        {
-                            myArray[x, 0] = "";
-                            myArray[x, 1] = "~";
-                            myArray[x, 2] = "";
-                            myArray[x, 2] = "";
-                            toolStripLabel.Text = "Data Not Added";
-                            break;
+                            var result = MessageBox.Show("Proceed with new Record?", "Add New Record",
+                                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                            if (result == DialogResult.OK)
+                            {
+                                toolStripLabel.Text = "Data Added";
+                                break;
+                            }
+                            else
+                            {
+                                myArray[x, 0] = "~";
+                                myArray[x, 1] = "";
+                                myArray[x, 2] = "";
+                                myArray[x, 2] = "";
+                                toolStripLabel.Text = "Data Not Added";
+                                break;
+                            }
                         }
                     }
                 }
+                else
+                {
+                    toolStripLabel.Text = "Please input every fields to Add data";
+                }
+                ClearTextBox();
+                BubbleSort();
             }
             else
             {
-                toolStripLabel.Text = "Please input every fields to Add data";
+                toolStripLabel.Text = "Error! Data Full!";
             }
-            ClearTextBox();
-            BubbleSort();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
+            toolStripLabel.Text = "";
             try
             {
                 int currentRecord = listViewArray.SelectedIndices[0];
-                if (currentRecord > 0)
+                if (currentRecord >= 0)
                 {
                     DialogResult delName = MessageBox.Show("Do you wish to delete this Name?",
                      "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (delName == DialogResult.Yes)
                     {
-                        myArray[currentRecord, 0] = "";
-                        myArray[currentRecord, 1] = "~";
+                        myArray[currentRecord, 0] = "~";
+                        myArray[currentRecord, 1] = "";
                         myArray[currentRecord, 2] = "";
                         myArray[currentRecord, 3] = "";
                         toolStripLabel.Text = "Data Deleted";
@@ -193,6 +201,7 @@ namespace Wiki
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
+            toolStripLabel.Text = "";
             try
             {
                 int currentRecord = listViewArray.SelectedIndices[0];
@@ -230,35 +239,65 @@ namespace Wiki
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
+            listViewArray.ForeColor = Color.Black;
+            BubbleSort();
+            toolStripLabel.Text = "";
             if (!string.IsNullOrEmpty(textBoxSearch.Text))
             {
-                listViewArray.Items.Clear();
-                for (int x = 0; x < rowSize; x++)
+                string target = textBoxSearch.Text;
+                int max = rowSize - 1;
+                int min = 0;
+                int mid = 0;
+                bool found = false;
+
+                while (min <= max)
                 {
-                    if (string.Compare(myArray[x, 0], textBoxSearch.Text) == 0)  //name search
+                    mid = (min + max) / 2;
+                    if (string.Compare(target, myArray[mid, 0]) == 0)
                     {
-                        ListViewItem lvi = new ListViewItem(myArray[x, 0]);
-                        lvi.SubItems.Add(myArray[x, 1]);
-                        lvi.SubItems.Add(myArray[x, 2]);
-                        lvi.SubItems.Add(myArray[x, 3]);
-                        listViewArray.Items.Add(lvi);
-                        toolStripLabel.Text = "Data Found!";
+                        found = true;
+                        break;
                     }
-                    else if (string.Compare(myArray[x, 1], textBoxSearch.Text) == 0)  // category search
+                    else if (string.Compare(target, myArray[mid, 0]) < 0)
                     {
-                        ListViewItem lvi = new ListViewItem(myArray[x, 0]);
-                        lvi.SubItems.Add(myArray[x, 1]);
-                        lvi.SubItems.Add(myArray[x, 2]);
-                        lvi.SubItems.Add(myArray[x, 3]);
-                        listViewArray.Items.Add(lvi);
-                        toolStripLabel.Text = "Data Found!";
+                        max = mid - 1;
                     }
-                    else if (toolStripLabel.Text != "Data Found!")  // data Not Found
+                    else
                     {
-                        toolStripLabel.Text = "Data NOT Found!";
+                        min = mid + 1;
                     }
-                    listViewArray.ForeColor = Color.Blue;
                 }
+                if (found)
+                {
+                    toolStripLabel.Text = "Data Found!";
+                    listViewArray.Items[mid].ForeColor = Color.Blue;
+
+                    textBoxName.Text = myArray[mid, 0];
+                    textBoxCategory.Text = myArray[mid, 1];
+                    textBoxStructure.Text = myArray[mid, 2];
+                    textBoxDefinition.Text = myArray[mid, 3];
+                }
+
+                // Another way to search instead of Binary Search
+                // for (int x = 0; x < rowSize; x++)
+                // {
+                //     if (string.Compare(myArray[x, 0], textBoxSearch.Text) == 0)  //name search
+                //     {
+                //         ListViewItem lvi = new ListViewItem(myArray[x, 0]);
+                //         listViewArray.Items[x].ForeColor = Color.Blue;
+                //         toolStripLabel.Text = "Data Found!";
+                //     }
+                //     else if (toolStripLabel.Text != "Data Found!")  // data Not Found
+                //     {
+                //         toolStripLabel.Text = "Data NOT Found!";
+                //     }
+                // }
+
+                else // data Not Found
+                {
+                    toolStripLabel.Text = "Data NOT Found!"; 
+                }
+
             }
             else // Error trapping for no data Search
             {
@@ -275,11 +314,11 @@ namespace Wiki
 
         public void BubbleSort()
         {
-            for (int x = 0; x < rowSize; x++)
+            for (int x = 0; x < rowSize -1; x++)
             {
                 for (int y = 0; y < rowSize - 1; y++)
                 {
-                    if (string.CompareOrdinal(myArray[y, 1], myArray[y + 1, 1]) > 0)
+                    if (string.CompareOrdinal(myArray[y, 0], myArray[y + 1, 0]) > 0)
                     {
                         for (int i = 0; i < colSize; i++)
                         {

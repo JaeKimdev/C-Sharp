@@ -83,7 +83,7 @@
             // 
             // buttonOpen
             // 
-            this.buttonOpen.Location = new System.Drawing.Point(206, 290);
+            this.buttonOpen.Location = new System.Drawing.Point(206, 319);
             this.buttonOpen.Name = "buttonOpen";
             this.buttonOpen.Size = new System.Drawing.Size(75, 23);
             this.buttonOpen.TabIndex = 3;
@@ -93,7 +93,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(287, 290);
+            this.buttonSave.Location = new System.Drawing.Point(287, 319);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 23);
             this.buttonSave.TabIndex = 4;
@@ -150,7 +150,7 @@
             this.listViewArray.HideSelection = false;
             this.listViewArray.Location = new System.Drawing.Point(192, 55);
             this.listViewArray.Name = "listViewArray";
-            this.listViewArray.Size = new System.Drawing.Size(181, 219);
+            this.listViewArray.Size = new System.Drawing.Size(181, 247);
             this.listViewArray.TabIndex = 2;
             this.listViewArray.UseCompatibleStateImageBehavior = false;
             this.listViewArray.View = System.Windows.Forms.View.Details;
