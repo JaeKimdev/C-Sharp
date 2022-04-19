@@ -1,0 +1,40 @@
+C:\Users\30045816\OneDrive - TAFE\Documents\TAFE\C Sharp One\Assessment\Ass2Astro\Ass2Astro\bin\Debug\Ass2Astro.exe.config
+C:\Users\30045816\OneDrive - TAFE\Documents\TAFE\C Sharp One\Assessment\Ass2Astro\Ass2Astro\bin\Debug\Ass2Astro.exe
+C:\Users\30045816\OneDrive - TAFE\Documents\TAFE\C Sharp One\Assessment\Ass2Astro\Ass2Astro\bin\Debug\Ass2Astro.pdb
+C:\Users\30045816\OneDrive - TAFE\Documents\TAFE\C Sharp One\Assessment\Ass2Astro\Ass2Astro\obj\Debug\Ass2Astro.csprojAssemblyReference.cache
+C:\Users\30045816\OneDrive - TAFE\Documents\TAFE\C Sharp One\Assessment\Ass2Astro\Ass2Astro\obj\Debug\Ass2Astro.AstroForm.resources
+C:\Users\30045816\OneDrive - TAFE\Documents\TAFE\C Sharp One\Assessment\Ass2Astro\Ass2Astro\obj\Debug\Ass2Astro.Properties.Resources.resources
+C:\Users\30045816\OneDrive - TAFE\Documents\TAFE\C Sharp One\Assessment\Ass2Astro\Ass2Astro\obj\Debug\Ass2Astro.csproj.GenerateResource.cache
+C:\Users\30045816\OneDrive - TAFE\Documents\TAFE\C Sharp One\Assessment\Ass2Astro\Ass2Astro\obj\Debug\Ass2Astro.csproj.CoreCompileInputs.cache
+C:\Users\30045816\OneDrive - TAFE\Documents\TAFE\C Sharp One\Assessment\Ass2Astro\Ass2Astro\obj\Debug\Ass2Astro.exe
+C:\Users\30045816\OneDrive - TAFE\Documents\TAFE\C Sharp One\Assessment\Ass2Astro\Ass2Astro\obj\Debug\Ass2Astro.pdb
+C:\Users\30045816\OneDrive - TAFE\Documents\TAFE\C Sharp One\Assessment\Assessment Task Two\Ass2Astro\Ass2Astro\bin\Debug\Ass2Astro.exe.config
+C:\Users\30045816\OneDrive - TAFE\Documents\TAFE\C Sharp One\Assessment\Assessment Task Two\Ass2Astro\Ass2Astro\bin\Debug\Ass2Astro.exe
+C:\Users\30045816\OneDrive - TAFE\Documents\TAFE\C Sharp One\Assessment\Assessment Task Two\Ass2Astro\Ass2Astro\bin\Debug\Ass2Astro.pdb
+C:\Users\30045816\OneDrive - TAFE\Documents\TAFE\C Sharp One\Assessment\Assessment Task Two\Ass2Astro\Ass2Astro\obj\Debug\Ass2Astro.AstroForm.resources
+C:\Users\30045816\OneDrive - TAFE\Documents\TAFE\C Sharp One\Assessment\Assessment Task Two\Ass2Astro\Ass2Astro\obj\Debug\Ass2Astro.Properties.Resources.resources
+C:\Users\30045816\OneDrive - TAFE\Documents\TAFE\C Sharp One\Assessment\Assessment Task Two\Ass2Astro\Ass2Astro\obj\Debug\Ass2Astro.csproj.GenerateResource.cache
+C:\Users\30045816\OneDrive - TAFE\Documents\TAFE\C Sharp One\Assessment\Assessment Task Two\Ass2Astro\Ass2Astro\obj\Debug\Ass2Astro.csproj.CoreCompileInputs.cache
+C:\Users\30045816\OneDrive - TAFE\Documents\TAFE\C Sharp One\Assessment\Assessment Task Two\Ass2Astro\Ass2Astro\obj\Debug\Ass2Astro.exe
+C:\Users\30045816\OneDrive - TAFE\Documents\TAFE\C Sharp One\Assessment\Assessment Task Two\Ass2Astro\Ass2Astro\obj\Debug\Ass2Astro.pdb
+C:\Users\30043320\Downloads\CSharp-Assessment-Two-main\Ass2Astro\bin\Debug\Ass2Astro.exe.config
+C:\Users\30043320\Downloads\CSharp-Assessment-Two-main\Ass2Astro\bin\Debug\Ass2Astro.exe
+C:\Users\30043320\Downloads\CSharp-Assessment-Two-main\Ass2Astro\bin\Debug\Ass2Astro.pdb
+C:\Users\30043320\Downloads\CSharp-Assessment-Two-main\Ass2Astro\obj\Debug\Ass2Astro.csproj.AssemblyReference.cache
+C:\Users\30043320\Downloads\CSharp-Assessment-Two-main\Ass2Astro\obj\Debug\Ass2Astro.AstroForm.resources
+C:\Users\30043320\Downloads\CSharp-Assessment-Two-main\Ass2Astro\obj\Debug\Ass2Astro.Properties.Resources.resources
+C:\Users\30043320\Downloads\CSharp-Assessment-Two-main\Ass2Astro\obj\Debug\Ass2Astro.csproj.GenerateResource.cache
+C:\Users\30043320\Downloads\CSharp-Assessment-Two-main\Ass2Astro\obj\Debug\Ass2Astro.csproj.CoreCompileInputs.cache
+C:\Users\30043320\Downloads\CSharp-Assessment-Two-main\Ass2Astro\obj\Debug\Ass2Astro.exe
+C:\Users\30043320\Downloads\CSharp-Assessment-Two-main\Ass2Astro\obj\Debug\Ass2Astro.pdb
+C:\Users\30045816\OneDrive - TAFE\Documents\TAFE\C Sharp One\Assessment\Assessment Task Two\Ass2Astro\Ass2Astro\obj\Debug\Ass2Astro.csproj.AssemblyReference.cache
+D:\1-C# 1 - Tue\Assessment\AT2\Sprint 2\CSharp-Assessment-Two-main\Ass2Astro\bin\Debug\Ass2Astro.exe.config
+D:\1-C# 1 - Tue\Assessment\AT2\Sprint 2\CSharp-Assessment-Two-main\Ass2Astro\bin\Debug\Ass2Astro.exe
+D:\1-C# 1 - Tue\Assessment\AT2\Sprint 2\CSharp-Assessment-Two-main\Ass2Astro\bin\Debug\Ass2Astro.pdb
+D:\1-C# 1 - Tue\Assessment\AT2\Sprint 2\CSharp-Assessment-Two-main\Ass2Astro\obj\Debug\Ass2Astro.csproj.AssemblyReference.cache
+D:\1-C# 1 - Tue\Assessment\AT2\Sprint 2\CSharp-Assessment-Two-main\Ass2Astro\obj\Debug\Ass2Astro.AstroForm.resources
+D:\1-C# 1 - Tue\Assessment\AT2\Sprint 2\CSharp-Assessment-Two-main\Ass2Astro\obj\Debug\Ass2Astro.Properties.Resources.resources
+D:\1-C# 1 - Tue\Assessment\AT2\Sprint 2\CSharp-Assessment-Two-main\Ass2Astro\obj\Debug\Ass2Astro.csproj.GenerateResource.cache
+D:\1-C# 1 - Tue\Assessment\AT2\Sprint 2\CSharp-Assessment-Two-main\Ass2Astro\obj\Debug\Ass2Astro.csproj.CoreCompileInputs.cache
+D:\1-C# 1 - Tue\Assessment\AT2\Sprint 2\CSharp-Assessment-Two-main\Ass2Astro\obj\Debug\Ass2Astro.exe
+D:\1-C# 1 - Tue\Assessment\AT2\Sprint 2\CSharp-Assessment-Two-main\Ass2Astro\obj\Debug\Ass2Astro.pdb
