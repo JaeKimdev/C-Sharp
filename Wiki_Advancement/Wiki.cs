@@ -170,6 +170,141 @@ namespace Wiki_Advancement
         }
         #endregion
 
+        // 6.5 Create a custom ValidName method which will take a parameter string value from the Textbox Name and returns a Boolean after checking for duplicates.
+        // Use the built in List<T> method “Exists” to answer this requirement.
+        private bool ValidName(String a)
+        {
+            if (!myWiki.Exists(dup => dup.getName() == a))
+            {
+                Trace.WriteLine("Valid Name = true");
+                return true;
+            }
+            else
+            {
+                Trace.WriteLine("Valid Name = false");
+                toolStripStatusLabel.Text = "Invalid Name, Name Duplicated";
+                return false;
+            }
+        }
+
+        // 6.6 Create two methods to highlight and return the values from the Radio button GroupBox.
+        // The first method must return a string value from the selected radio button (Linear or Non-Linear).
+        // The second method must send an integer index which will highlight an appropriate radio button.
+        #region Radio Button
+        private string RadioBtnString()
+        {
+            if (radioButtonLinear.Checked)
+            {
+                Trace.WriteLine("radioButton - Linear");
+                return "Linear";
+            }
+            else
+            {
+                Trace.WriteLine("radioButton - NoN Linear");
+                return "Non-Linear";
+            }
+        }
+
+        private void RadioBtnHighlight(int index)
+        {
+            if (index == 0)
+            {
+                Trace.WriteLine("radioButton - Checked");
+                radioButtonLinear.Checked = true;
+            }
+            else
+            {
+                Trace.WriteLine("radioButton - Not Checked");
+                radioButtonNonLinear.Checked = true;
+            }
+        }
+        #endregion
+
+        // 6.12 Create a custom method that will clear and reset the TextBboxes, ComboBox and Radio button
+        #region Clear TextBox
+        private void clearTextbox()
+        {
+            textBoxName.Clear();
+            comboBoxCat.SelectedIndex = -1;
+            radioButtonLinear.Checked = false;
+            radioButtonNonLinear.Checked = false;
+            textBoxDef.Clear();
+            Trace.WriteLine("Text Box Cleared");
+        }
+        #endregion
+
+        // 6.9 Create a single custom method that will sort and then display the Name and Category from the wiki information in the list.
+        #region Display
+        private void displayList()
+        {
+            myWiki.Sort();
+            listViewWiki.Items.Clear();
+            listViewWiki.ForeColor = Color.Black;
+            foreach (var information in myWiki)
+            {
+               listViewWiki.Items.Add(information.displayInformation());
+            }
+            Trace.WriteLine("ListView Sorted");
+        }
+        #endregion
+
+        private void resetColor()
+        {
+            for (int i = 0; i < myWiki.Count; i++)
+            {
+                listViewWiki.Items[i].ForeColor = Color.Black;
+                listViewWiki.Items[i].BackColor = Color.White;
+            }
+            Trace.WriteLine("ListView Color Reset");
+        }
+
+        // 6.11 Create a ListView event so a user can select a Data Structure Name from the list of Names and the associated information
+        // will be displayed in the related text boxes combo box and radio button.
+        #region ListView Wiki
+        private void listViewWiki_Click(object sender, EventArgs e)
+        {
+            int currentRecordIndex = listViewWiki.SelectedIndices[0];
+            Trace.WriteLine("ListView index : " + currentRecordIndex + " Clicked");
+            textBoxName.Text = myWiki[currentRecordIndex].getName();
+            comboBoxCat.Text = myWiki[currentRecordIndex].getCategory();
+            if (myWiki[currentRecordIndex].getStructure() == "Linear")
+            {
+                RadioBtnHighlight(0);
+                Trace.WriteLine("ListView Click : Linear RadioBtn On");
+            }
+
+            else
+            {
+                RadioBtnHighlight(1);
+                Trace.WriteLine("ListView Click : Non Linear RadioBtn On");
+            }
+            textBoxDef.Text = myWiki[currentRecordIndex].getDefinition();
+        }
+        #endregion
+
+        // 6.13 Create a double click event on the Name TextBox to clear the TextBboxes, ComboBox and Radio button.
+        #region Doubble Click
+        private void textBoxName_DoubleClick(object sender, EventArgs e)
+        {
+            clearTextbox();
+        }
+
+        private void textBoxDef_DoubleClick(object sender, EventArgs e)
+        {
+            clearTextbox();
+        }
+
+        private void textBoxSerch_DoubleClick(object sender, EventArgs e)
+        {
+            clearTextbox();
+        }
+        #endregion
+
+        // 6.15 The Wiki application will save data when the form closes. 
+        private void Wiki_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            saveRecord(defaultFileName);
+        }
 
      
     }
