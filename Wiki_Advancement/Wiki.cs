@@ -282,6 +282,130 @@ namespace Wiki_Advancement
         }
         #endregion
 
+        // 6.10 Create a button method that will use the builtin binary search to find a Data Structure name.
+        // If the record is found the associated details will populate the appropriate input controls and highlight the name in the ListView.
+        // At the end of the search process the search input TextBox must be cleared.
+        #region Search
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            resetColor();
+
+            if (!string.IsNullOrEmpty(textBoxSerch.Text))
+            {
+                Information target = new Information();
+                target.setName(textBoxSerch.Text);
+                int search = myWiki.BinarySearch(target);
+
+                if (search >= 0)
+                {
+                    listViewWiki.Focus();
+                    listViewWiki.Items[search].BackColor = Color.Blue;
+                    listViewWiki.Items[search].ForeColor = Color.White;
+                    toolStripStatusLabel.Text = textBoxSerch.Text + " found !";
+                }
+                else
+                    toolStripStatusLabel.Text = textBoxSerch.Text + " is not found !";
+
+                textBoxSerch.Clear();
+            }
+            else
+            {
+                toolStripStatusLabel.Text = "Please input text to search";
+            }
+        }
+        #endregion
+
+        // 6.14 Create two buttons for the manual open and save option; this must use a dialog box to select a file or rename a saved file.
+        // All Wiki data is stored/retrieved using a binary file format.
+        #region Open, Save
+        private void buttonOpen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialogVG = new OpenFileDialog();
+            openFileDialogVG.InitialDirectory = Application.StartupPath;
+            openFileDialogVG.Filter = "dat Files|*.dat";
+            openFileDialogVG.Title = "Select a Dat File";
+            if (openFileDialogVG.ShowDialog() == DialogResult.OK)
+            {
+                openRecord(openFileDialogVG.FileName);
+            }
+            Trace.WriteLine("Load Data file");
+        }
+
+        private void openRecord(string openFileName)
+        {
+            try
+            {
+                using (Stream stream = File.Open(openFileName, FileMode.Open))
+                {
+                    using (var reader = new BinaryReader(stream, Encoding.UTF8, false))
+                    {
+                        myWiki.Clear();
+                        while (stream.Position < stream.Length)
+                        {
+                            Information readInfo = new Information();
+                            readInfo.setName(reader.ReadString());
+                            readInfo.setCategory(reader.ReadString());
+                            readInfo.setStructure(reader.ReadString());
+                            readInfo.setDefinition(reader.ReadString());
+                            myWiki.Add(readInfo);
+                        }
+                    }
+                }
+
+            }
+            catch (IOException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            displayList();
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialogVG = new SaveFileDialog();
+            saveFileDialogVG.Filter = "dat file|*.dat";
+            saveFileDialogVG.Title = "Save a Dat File";
+            saveFileDialogVG.InitialDirectory = Application.StartupPath;
+            saveFileDialogVG.DefaultExt = "dat";
+            saveFileDialogVG.ShowDialog();
+
+            string fileName = saveFileDialogVG.FileName;
+            if (saveFileDialogVG.FileName != "")
+            {
+                saveRecord(fileName);
+            }
+            else
+            {
+                saveRecord(defaultFileName);
+            }
+            Trace.WriteLine("Save Data File");
+        }
+
+        private void saveRecord(string saveFileName)
+        {
+            try
+            {
+                using (var stream = File.Open(saveFileName, FileMode.Create))
+            {
+                using (var writer = new BinaryWriter(stream, Encoding.UTF8, false))
+                {
+                    foreach (var x in myWiki)
+                    {
+                        writer.Write(x.getName());
+                        writer.Write(x.getCategory());
+                        writer.Write(x.getStructure());
+                        writer.Write(x.getDefinition());
+                    }
+                }
+            }
+            }
+            catch (IOException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        #endregion
+
         // 6.13 Create a double click event on the Name TextBox to clear the TextBboxes, ComboBox and Radio button.
         #region Doubble Click
         private void textBoxName_DoubleClick(object sender, EventArgs e)
